@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ordered List Hover Animation</title>
+  <!-- CSS styles -->
+  <style>
+    /* Base styles for the page */
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    /* Container styles */
+    .container{
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    /* Heading styles */
+    h1{
+      text-align: center;
+      color: #333;
+    }
+    /* Styles for ordered list */
+    ol{
+      list-style-type: none; /* Remove default list numbering */
+      counter-reset: item; /* Reset the counter for list items */
+    }
+    /* Styles for list items */
+    li{
+      position: relative;
+      margin-bottom: 20px;
+      padding-left: 40px;
+      font-size: 18px;
+      transition: transform 0.3s ease-in-out; /* Add smooth transition effect */
+    }
+    /* Styles for numbering before list items */
+    li::before{
+      content: counter(item); /* Display the counter value */
+      counter-increment: item; /* Increment the counter for each item */
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      transition: transform 0.3s ease-in-out; /* Add smooth transition effect */
+    }
+    /* Alternate styling for odd numbered list items */
+    li:nth-child(odd)::before{
+      transform: rotate(-45deg); /* Rotate the numbering */
+      color: rgb(165,165,165); /* Change color for odd items */
+    }
+    /* Hover effect for list items */
+    li:hover{
+      transform: rotate(5deg) scale(1.05); /* Rotate and scale on hover */
+    }
+  </style>
+</head>
+<body>
+  <!-- Container for content -->
+  <div class="container">
+    <!-- Heading -->
+    <h1>Ordered List Hover Animation</h1>
+    <!-- Ordered List -->
+    <ol>
+      <!-- List items -->
+      <li>This is the first item in the list</li>
+      <li>This is the second item in the list</li>
+      <li>This is the third item in the list</li>
+      <li>This is the fourth item in the list</li>
+    </ol>
+  </div>
+</body>
+</html>
